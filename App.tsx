@@ -4,6 +4,7 @@
  * @flow
  */
 
+
 import React from 'react';
 import { Component } from 'react';
 import {
@@ -12,6 +13,7 @@ import {
   Text,
   View
 } from 'react-native';
+import * as Animatable from 'react-native-animatable';
 import Hello from './Hello';
 
 const instructions = Platform.select({
@@ -25,6 +27,8 @@ export default class App extends Component<any> {
   public render() {
     return (
       <View style={styles.container}>
+        <Animatable.Text animation="slideInDown" iterationCount={5} direction="alternate">Up and down you go</Animatable.Text>
+        <Animatable.Text animation="pulse" easing="ease-out" iterationCount="infinite" style={{ textAlign: 'center' }}>❤️</Animatable.Text>
         <Text style={styles.welcome}>
           Welcome to React Native!
         </Text>
